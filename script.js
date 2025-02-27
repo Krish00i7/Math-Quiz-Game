@@ -125,3 +125,23 @@ function endGame() {
     finalScoreEl.classList.remove("hidden");
     restartBtn.classList.remove("hidden");
 }
+const departmentText = document.getElementById("department-text");
+
+function startGame() {
+    startBtn.classList.add("hidden");
+    quizSection.classList.remove("hidden");
+    restartBtn.classList.add("hidden");
+    finalScoreEl.classList.add("hidden");
+    timerBar.classList.remove("hidden");
+    score = 0;
+    questionCount = 0;
+    
+    departmentText.classList.add("hidden"); // Hide department name when game starts
+    
+    nextQuestion();
+}
+
+function restartGame() {
+    departmentText.classList.remove("hidden"); // Show department name again on restart
+    startGame();
+}
